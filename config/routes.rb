@@ -3,22 +3,22 @@ Rails.application.routes.draw do
 
 resources :users, only: [:update, :show, :edit]
 post 'users/deleted/:id' => 'users#deleted_flag', as:'deleted_flag'
-get 'users/admins_index' => "users#adimins_index", as:'users_adimins'
-get 'users/admins/:id' => 'users#adimins_show', as:'user_adimins'
-post 'users/admins_edit/:id' => 'users#adimins_edit', as:'user_adimins_edit'
-post 'users/admins/:id' => 'users#adimins_update', as:'user_adimins'
-post 'users/admins/deleted/:id' => 'users#adimins_deleted_flag', as:'adimins_deleted_flag'
+get 'users/admins_index' => "users#admins_index", as:'users_admins'
+get 'users/admins/:id' => 'users#admins_show', as:'user_admins'
+post 'users/admins_edit/:id' => 'users#admins_edit', as:'user_admins_edit'
+post 'users/admins/:id' => 'users#admins_update', as:'user_admins'
+post 'users/admins/deleted/:id' => 'users#admins_deleted_flag', as:'admins_deleted_flag'
 
 resources :cds, only: [:index, :search, :show]
-get 'cds/adimins_index' => 'cds#adimins_index', as:'cds_adimins'
+get 'cds/admins_index' => 'cds#admins_index', as:'cds_admins'
 get 'cds/search', as: 'search'
-get 'cds/adimins/:id' => 'cds#adimins_show', as:'cd_adimins'
-get 'cds/adimins_edit/:id' => 'cds#adimins_edit', as:'cd_adimns_edit'
-post 'cds/adimins/:id' => 'cds#adimins_update', as:'cd_adimins'
-delete 'cds/adimins/:id' => 'cds#adimins_destroy', as:'cd_adimins'
-post 'cds/adimins' => 'cds#adimins_create', as:'cds_new_create'
-get 'cds/adimins_new' => 'cds#adimins_new', as:'cds_new'
-get 'cds/adimins_search', as: 'adimns_search'
+get 'cds/admins/:id' => 'cds#admins_show', as:'cd_admins'
+get 'cds/admins_edit/:id' => 'cds#admins_edit', as:'cd_adimns_edit'
+post 'cds/admins/:id' => 'cds#admins_update', as:'cd_admins'
+delete 'cds/admins/:id' => 'cds#admins_destroy', as:'cd_admins'
+post 'cds/admins' => 'cds#admins_create', as:'cds_new_create'
+get 'cds/admins_new' => 'cds#admins_new', as:'cds_new'
+get 'cds/admins_search', as: 'admins_search'
 
 resources :genres, only: [:create, :update]
 

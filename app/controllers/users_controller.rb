@@ -11,18 +11,18 @@ class UsersController < ApplicationController
   def deleted_flag
   end
 
-  def adimins_index
+  def admins_index
   end
 
-  def adimins_show
+  def admins_show
   end
 
-  def adimins_edit
+  def admins_edit
   end
 
-  def adimins_update
+  def admins_update
   end
 
-  def adimins_deleted_flag
+  def admins_deleted_flag
   end
 end

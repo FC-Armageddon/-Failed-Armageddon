@@ -8,27 +8,27 @@ class CdsController < ApplicationController
   def show
   end
 
-  def adimins_index
+  def admins_index
   end
 
-  def adimins_show
+  def admins_show
   end
 
-  def adimins_edit
+  def admins_edit
   end
 
-  def adimins_update
+  def admins_update
   end
 
-  def adimins_destroy
+  def admins_destroy
   end
 
-  def adimins_create
+  def admins_create
   end
 
-  def adimins_new
+  def admins_new
   end
 
-  def adimins_serch
+  def admins_serch
   end
 end
