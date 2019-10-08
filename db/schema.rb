@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_072339) do
+
+
+ActiveRecord::Schema.define(version: 2019_10_08_052247) do
+
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,12 +27,111 @@ ActiveRecord::Schema.define(version: 2019_10_08_072339) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+
   create_table "discs", force: :cascade do |t|
     t.integer "cd_id"
     t.text "disc"
     t.text "sort"
+  end
+
+
+  create_table "arrivals", force: :cascade do |t|
+    t.integer "cd_id"
+    t.integer "arrival"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cd_id"], name: "index_arrivals_on_cd_id"
+  end
+
+  create_table "cds", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "label_id"
+    t.integer "sales_status_id"
+    t.integer "artist_id"
+    t.text "cd_name"
+    t.text "jacket_image_id"
+    t.integer "price"
+    t.integer "stock"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+
+  create_table "destinations", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "delivery_postal_code"
+    t.text "delivery_address"
+    t.text "delivery_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.text "genre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchase_histories", force: :cascade do |t|
+    t.integer "buy_informations_id"
+    t.text "cd_name"
+    t.integer "price"
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.text "artist"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "buy_infomations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "payment_i18n"
+    t.integer "delivery_status_i18n"
+    t.integer "subtotal"
+    t.text "final_postal_code"
+    t.text "final_address"
+    t.text "final_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_buy_infomations_on_user_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "cd_id"
+    t.integer "user_id"
+    t.integer "quantity"
+    t.boolean "deleted_flag", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cd_id"], name: "index_carts_on_cd_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.integer "label"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+  create_table "songs", force: :cascade do |t|
+    t.integer "disc_id"
+    t.text "song"
+    t.integer "song_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["disc_id"], name: "index_songs_on_disc_id"
+  end
+
+  create_table "sales_statuses", force: :cascade do |t|
+    t.integer "sales_status_i18n"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "users", force: :cascade do |t|

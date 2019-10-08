@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buy_informations_id: 1
+  cd_name: MyText
+  price: 1
+
+two:
+  buy_informations_id: 1
+  cd_name: MyText
+  price: 1
