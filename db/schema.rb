@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2019_10_08_051857) do
 
 ActiveRecord::Schema.define(version: 2019_10_08_052247) do
 
@@ -26,6 +25,13 @@ ActiveRecord::Schema.define(version: 2019_10_08_052247) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+
+  create_table "discs", force: :cascade do |t|
+    t.integer "cd_id"
+    t.text "disc"
+    t.text "sort"
   end
 
 
@@ -46,9 +52,12 @@ ActiveRecord::Schema.define(version: 2019_10_08_052247) do
     t.text "jacket_image_id"
     t.integer "price"
     t.integer "stock"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+
 
   create_table "destinations", force: :cascade do |t|
     t.integer "user_id"
@@ -69,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_052247) do
     t.integer "buy_informations_id"
     t.text "cd_name"
     t.integer "price"
+  end
 
   create_table "artists", force: :cascade do |t|
     t.text "artist"
@@ -115,6 +125,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_052247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["disc_id"], name: "index_songs_on_disc_id"
+  end
 
   create_table "sales_statuses", force: :cascade do |t|
     t.integer "sales_status_i18n"
@@ -131,6 +142,15 @@ ActiveRecord::Schema.define(version: 2019_10_08_052247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "postal_code"
+    t.text "address"
+    t.text "phone_number"
+    t.text "profile_image_id"
+    t.boolean "deleted_flag", default: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "kana_first_name"
+    t.string "kana_last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
