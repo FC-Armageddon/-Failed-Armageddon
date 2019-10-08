@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  payment: 1
+  delivery_status: 1
+  subtotal: 1
+  final_postal_code: MyText
+  final_address: MyText
+  final_name: MyText
+
+two:
+  user_id: 1
+  payment: 1
+  delivery_status: 1
+  subtotal: 1
+  final_postal_code: MyText
+  final_address: MyText
+  final_name: MyText

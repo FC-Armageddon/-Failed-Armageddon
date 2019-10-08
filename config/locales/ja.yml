@@ -1,0 +1,19 @@
+#日本語に編訳するための記述
+ja:
+  enums:
+    sales_status:
+        sold: 販売中
+        preparing: 準備中
+        sold_out: 売り切れ
+
+    payment:
+        cash: 現金
+        cod: 代引き
+#クレジットカードを追加する場合はここ
+
+　　delivery_status:
+        reception: 受付
+        preparing: 商品準備中
+        delivered: 出荷済
+
+# coding: utf-8
