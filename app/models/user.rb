@@ -8,7 +8,6 @@ class User < ApplicationRecord
   	validates :postal_code
   	validates :address
   	validates :phone_number
-  	validates :deleted_flag
   	validates :first_name
   	validates :last_name
   	validates :kana_first_name
