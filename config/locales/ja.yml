@@ -11,7 +11,7 @@ ja:
         cod: 代引き
 #クレジットカードを追加する場合はここ
 
-　　delivery_status:
+  delivery_status:
         reception: 受付
         preparing: 商品準備中
         delivered: 出荷済
