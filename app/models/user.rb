@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :carts
+  has_many :buy_informations
+  has_many :destinations
+
   with_options presence: true do
   	validates :postal_code
   	validates :address
