@@ -1,4 +1,8 @@
 class BuyInfomation < ApplicationRecord
+
+    belongs_to :user
+    has_many :purchase_histories
+
 	validates :user_id, presence: true
 	validates :payment, presence: true
 	validates :delivery_status, presence: true
